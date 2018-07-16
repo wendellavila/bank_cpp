@@ -6,6 +6,6 @@ class Conta{
     public:
         Conta(double saldoInicial);
         double getSaldo();
-        void depositar(double Valor);
-        void sacar(double Valor);
+        bool depositar(double Valor);
+        bool sacar(double Valor);
 };

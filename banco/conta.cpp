@@ -8,15 +8,18 @@ Conta::Conta(double saldoInicial){
     this->saldo = saldoInicial;
 }
 
-void Conta::depositar(double valor){
+bool Conta::depositar(double valor){
     saldo += valor;
+    return true;
 }
-void Conta::sacar(double valor){
+bool Conta::sacar(double valor){
     if(valor <= saldo) {
         saldo -= valor;
+        return true;
     }
     else {
-        valor = saldo;
-        saldo -= valor;
+        //valor = saldo;
+        //saldo -= valor;
+        return false;
     }
 }

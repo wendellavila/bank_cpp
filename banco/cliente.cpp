@@ -1,5 +1,8 @@
 #include "cliente.hpp"
 
+Cliente::Cliente() {
+}
+
 Cliente::Cliente(std::string p, std::string u) {
     this->primeiroNome = p;
     this->ultimoNome = u;
@@ -19,4 +22,9 @@ Conta Cliente::getConta() {
 
 void Cliente::setConta(Conta conta) {
     this->conta = &conta;
+}
+
+void Cliente::setCliente(std::string p, std::string u) {
+    this->primeiroNome = p;
+    this->ultimoNome = u;
 }

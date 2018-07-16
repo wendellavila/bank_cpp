@@ -1,29 +1,22 @@
 #include <iostream>
-#include "banco/cliente.hpp"
+#include "banco/banco.hpp"
 
 using namespace std;
 
 int main(){
-    // Cria uma conta com saldo de R$ 500,00.
-    std::cout << "Criando a cliente Jane Smith." << std::endl;
-    Cliente cliente("Jane", "Smith");
-    std::cout << "firstname: " << cliente.getPrimeiroNome() << std::endl;
-    std::cout << "Criando a conta de Jane Smith com saldo inicial de R$ 500,00." << std::endl;
-    Conta conta(500.00);
-    //cliente.setConta(conta);
-    //conta = cliente.getConta();
 
-    std::cout << "Sacando R$ 150,00 da conta de Jane Smith" << std::endl;
-    conta.sacar(150.00);
+    Banco banco;
 
-    std::cout << "Depositando R$ 22,50 na conta de Jane Smith" << std::endl;
-    conta.depositar(22.50);
+    banco.adicionarCliente("Jane", "Simms");
+    banco.adicionarCliente("Owen", "Bryant");
+    banco.adicionarCliente("Tim", "Soley");
+    banco.adicionarCliente("Maria", "Soley");
 
-    std::cout << "Sacando R$ 47,62 da conta de Jane Smith" << std::endl;
-    conta.sacar(47.62);
+    for(int i = 0; i < banco.getNumeroDeClientes(); i++){
 
-    // Exibindo o saldo final na conta da cliente Jane Smith
-    std::cout << "Cliente " << cliente.getPrimeiroNome()
-               << " " << cliente.getUltimoNome() << " " << "tem um saldo de " << conta.getSaldo() << std::endl;
+      Cliente cliente = banco.getCliente(i);
+
+      cout << "Cliente [" << (i+1) << "] e " << cliente.getUltimoNome() << ", " << cliente.getPrimeiroNome() << endl;
+    }
     return 0;
 }

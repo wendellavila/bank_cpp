@@ -1,19 +1,27 @@
 # depslib dependency file v1.0
-1531683563 source:/home/wendell/Projects/C++/TrabalhoPOO/main.cpp
+1531711639 source:/home/wendell/Projects/C++/TrabalhoPOO/main.cpp
 	<iostream>
-	"banco/cliente.hpp"
+	"banco/banco.hpp"
 
-1531676739 /home/wendell/Projects/C++/TrabalhoPOO/banco/conta.hpp
+1531707707 /home/wendell/Projects/C++/TrabalhoPOO/banco/conta.hpp
 	<iostream>
 
-1531678655 source:/home/wendell/Projects/C++/TrabalhoPOO/banco/cliente.cpp
+1531711312 source:/home/wendell/Projects/C++/TrabalhoPOO/banco/cliente.cpp
 	"cliente.hpp"
 
-1531678649 /home/wendell/Projects/C++/TrabalhoPOO/banco/cliente.hpp
+1531712636 /home/wendell/Projects/C++/TrabalhoPOO/banco/cliente.hpp
 	<iostream>
 	<string>
 	"conta.hpp"
 
-1531676744 source:/home/wendell/Projects/C++/TrabalhoPOO/banco/conta.cpp
+1531708741 source:/home/wendell/Projects/C++/TrabalhoPOO/banco/conta.cpp
 	"conta.hpp"
+
+1531711857 /home/wendell/Projects/C++/TrabalhoPOO/banco/banco.hpp
+	<iostream>
+	<string>
+	"cliente.hpp"
+
+1531711298 source:/home/wendell/Projects/C++/TrabalhoPOO/banco/banco.cpp
+	"banco.hpp"
 

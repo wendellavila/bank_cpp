@@ -8,9 +8,11 @@ class Cliente{
         std::string ultimoNome;
         Conta *conta;
     public:
+        Cliente();
         Cliente(std::string p, std::string u);
         std::string getPrimeiroNome();
         std::string getUltimoNome();
         Conta getConta();
         void setConta(Conta conta);
+        void setCliente(std::string p, std::string u);
 };
