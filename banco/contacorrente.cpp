@@ -3,8 +3,8 @@
 ContaCorrente::ContaCorrente(double saldo) :Conta(saldo){
 }
 
-ContaCorrente::ContaCorrente(double saldo, double protecao) :Conta(saldo){
-    chequeEspecial = protecao;
+ContaCorrente::ContaCorrente(double saldo, ContaPoupanca *prot) :Conta(saldo){
+    protegidoPor = prot;
 }
 
 bool ContaCorrente::sacar(double total){
@@ -13,15 +13,12 @@ bool ContaCorrente::sacar(double total){
         Conta::saldo -= total;
         return true;
     }
-    else if(total <= Conta::saldo + chequeEspecial){
-        chequeEspecial -= (total - Conta::saldo);
-        Conta::saldo -= total;
+    else if(protegidoPor != NULL && total <= Conta::saldo + protegidoPor->getSaldo()){
+        protegidoPor->sacar(total - Conta::saldo);
+        Conta::saldo = 0;
         return true;
     }
     else {
         return false;
     }
-}
-double ContaCorrente::getChequeEspecial(){
-    return chequeEspecial;
 }

@@ -1,5 +1,7 @@
 #include <iostream>
 #include "conta.hpp"
+#ifndef CONTAPOUPANCA_H
+#define CONTAPOUPANCA_H
 
 class ContaPoupanca : public Conta {
     protected:
@@ -7,3 +9,5 @@ class ContaPoupanca : public Conta {
     public:
         ContaPoupanca(double saldo, double taxa);
 };
+
+#endif // CONTAPOUPANCA_H
