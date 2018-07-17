@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "banco/banco.hpp"
 #include "banco/contacorrente.hpp"
 #include "banco/contapoupanca.hpp"
@@ -7,110 +8,58 @@ using namespace std;
 
 int main(){
 
-    Banco bank;
+    Banco banco;
     Cliente *cliente;
-    Conta* conta;
+    //Conta* conta;
 
-    // Cria os clientes e suas respectivas contas
+    //Banco banco = new Banco();
+    //Cliente cliente;
 
-    std::cout << "Criando a cliente Jane Smith." << std::endl;
-    bank.adicionarCliente("Jane", "Smith");
-    cliente = bank.getCliente(0);
-    std::cout << "Criando sua conta poupanca com saldo de R$ 500,00 e 3% de juros." << std::endl;
-    cliente->setConta(new ContaPoupanca(500.00, 0.03));
+    // Cria varios clientes e suas respectivas contas
+    banco.adicionarCliente("Jane", "Simms");
+    cliente = banco.getCliente(0);
+    cliente->adicionarConta(new ContaPoupanca(500.00, 0.05));
+    cliente->adicionarConta(new ContaCorrente(200.00, 400.00));
 
-    std::cout << "Criando o cliente Owen Bryant." << std::endl;
-    bank.adicionarCliente("Owen", "Bryant");
-    cliente = bank.getCliente(1);
-    std::cout << "Criando sua conta corrente com saldo de R$ 500,00 e sem cheque especial." << std::endl;
-    cliente->setConta(new ContaCorrente(500.00));
+    banco.adicionarCliente("Owen", "Bryant");
+    cliente = banco.getCliente(1);
+    cliente->adicionarConta(new ContaCorrente(200.00));
 
-    std::cout << "Criando o cliente Tim Soley." << std::endl;
-    bank.adicionarCliente("Tim", "Soley");
-    cliente = bank.getCliente(2);
-    std::cout << "Criando sua conta corrente com saldo de R$ 500,00 e R$ 500,00 de cheque especial." << std::endl;
-    cliente->setConta(new ContaCorrente(500.00, 500.00));
-    std::cout << "Criando a cliente Maria Soley." << std::endl;
-    bank.adicionarCliente("Maria", "Soley");
-    cliente = bank.getCliente(3);
-    std::cout << "Maria divide sua conta corrente com seu marido Tim." << std::endl;
-    cliente->setConta(bank.getCliente(2)->getConta());
+    banco.adicionarCliente("Tim", "Soley");
+    cliente = banco.getCliente(2);
+    cliente->adicionarConta(new ContaPoupanca(1500.00, 0.05));
+    cliente->adicionarConta(new ContaCorrente(200.00));
 
-    std::cout << std::endl;
+    banco.adicionarCliente("Maria", "Soley");
+    cliente = banco.getCliente(3);
+    // Maria e Tim possuem uma conta conjunta
+    cliente->adicionarConta(banco.getCliente(2)->getConta(1));
+    cliente->adicionarConta(new ContaPoupanca(150.00, 0.05));
 
-    //Demonstra o comportamento dos varios tipos de conta
+    // Gera um Relatorio
+    cout << "\t\t\tRELATORIO DE CLIENTES" << endl;
+    cout << "\t\t\t=======================" << endl;
 
-    // Testando uma conta poupanca
-    std::cout << "Recuperando a cliente Jane Smith com sua conta poupanca." << std::endl;
-    cliente = bank.getCliente(0);
-    conta = cliente->getConta();
-    // Executa alguams transacoes na conta
-    std::cout << "Saque de R$ 150,00: " << conta->sacar(150.00) << std::endl;
-    std::cout << "Deposito de R$ 22,50: " << conta->depositar(22.50) << std::endl;
-    std::cout << "Saque de R$ 47.62: " << conta->sacar(47.62) << std::endl;
-    std::cout << "Saque de R$ 400.00: " << conta->sacar(400.00) << std::endl;
-    // Exibe o saldo final na conta
-    std::cout << "Cliente [" << cliente->getUltimoNome()
-		       << ", " << cliente->getPrimeiroNome()
-		       << "] tem o saldo de  " << conta->getSaldo() << std::endl;
-    if(conta->getChequeEspecial() > 0) {
-    	std::cout << "Com cheque especial de " << conta->getChequeEspecial() << std::endl;
-    }
+    for (int indice = 0; indice < banco.getNumeroDeClientes(); indice++) {
+        cliente = banco.getCliente(indice);
 
-    std::cout << endl;
+        cout << endl;
+        cout << "Cliente: " << cliente->getUltimoNome() << ", " << cliente->getPrimeiroNome() << endl;
 
-    // Testa uma conta corrente sem cheque especial
-    std::cout << "Recuperando o cliente Owen Bryant com sua conta corrente sem cheque especial." << std::endl;
-    cliente = bank.getCliente(1);
-    conta = cliente->getConta();
+        for (int indiceConta = 0; indiceConta < cliente->getNumeroDeContas(); indiceConta++){
+            Conta *conta = cliente->getConta(indiceConta);
+            string tipoConta = "aa";
 
-    // Executa algumas transacoes
-    std::cout << "Saque de R$ 150.00: " << conta->sacar(150.00) << std::endl;
-    std::cout << "deposito de R$  22.50: " << conta->depositar(22.50) << std::endl;
-    std::cout << "Saque de R$ 47.62: " << conta->sacar(47.62) << std::endl;
-    std::cout << "Saque de R$ 400.00: " << conta->sacar(400.00) << std::endl;
-    // Exibe o saldo final em conta
-    std::cout << "Cliente [" << cliente->getUltimoNome()
-		       << ", " << cliente->getPrimeiroNome()
-		       << "] tem o saldo de  " << conta->getSaldo() << std::endl;
-    if(conta->getChequeEspecial() > 0) {
-    	std::cout << "Com cheque especial de " << conta->getChequeEspecial() << std::endl;
-    }
+//            if(conta instanceof ContaCorrente) {
+//                tipoConta = "Conta Corrente";
+//            }
+//            else if(conta instanceof ContaPoupanca) {
+//                tipoConta = "Conta Poupança";
+//            }
 
-    std::cout << endl;
+            cout << "O saldo da " << tipoConta << " é de R$ " << conta->getSaldo() << endl;
 
-    // Testando uma conta corrente com cheque especial
-    std::cout << "Recuperando o cliente Tim Soley com sua conta corrente que possui cheque especial." << std::endl;
-    cliente = bank.getCliente(2);
-    conta = cliente->getConta();
-    // Executa algumas transacoes
-    std::cout << "Saque de R$ 150.00: " << conta->sacar(150.00) << std::endl;
-    std::cout << "deposito de R$  22.50: " << conta->depositar(22.50) << std::endl;
-    std::cout << "Saque de R$ 47.62: " << conta->sacar(47.62) << std::endl;
-    std::cout << "Saque de R$ 400.00: " << conta->sacar(400.00) << std::endl;
-    // Exibe o saldo final em conta
-    std::cout << "Cliente [" << cliente->getUltimoNome()
-		       << ", " << cliente->getPrimeiroNome()
-		       << "] tem o saldo de  " << conta->getSaldo() << std::endl;
-    if(conta->getChequeEspecial() > 0) {
-    	std::cout << "Com cheque especial de " << conta->getChequeEspecial() << std::endl;
-    }
-
-    std::cout << endl;
-
-    // Testando uma conta corrente com cheque especial
-    std::cout << "Recuperando a cliente Maria Soley com sua conta conjunta com o marido Tim." << std::endl;
-    cliente = bank.getCliente(3);
-    conta = cliente->getConta();
-    // Executa algumas transacoes
-    std::cout << "deposito de R$  150.00: " << conta->depositar(150.00) << std::endl;
-    std::cout << "Saque de R$ 750.00: " << conta->sacar(750.00) << std::endl;
-    // Exibe o saldo final em conta
-    std::cout << "Cliente [" << cliente->getUltimoNome()
-		       << ", " << cliente->getPrimeiroNome()
-		       << "] tem o saldo de  " << conta->getSaldo() << std::endl;
-    if(conta->getChequeEspecial() > 0) {
-    	std::cout << "Com cheque especial de " << conta->getChequeEspecial() << std::endl;
+        }
     }
 
     return 0;
