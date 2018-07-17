@@ -50,12 +50,13 @@ int main(){
             Conta *conta = cliente->getConta(indiceConta);
             string tipoConta = "aa";
 
-//            if(conta instanceof ContaCorrente) {
-//                tipoConta = "Conta Corrente";
-//            }
-//            else if(conta instanceof ContaPoupanca) {
-//                tipoConta = "Conta Poupança";
-//            }
+            //instanceof
+            if(dynamic_cast<ContaCorrente*>(conta) != nullptr){
+                tipoConta = "Conta Corrente";
+            }
+            else if(dynamic_cast<ContaPoupanca*>(conta) != nullptr){
+                tipoConta = "Conta Poupança";
+            }
 
             cout << "O saldo da " << tipoConta << " é de R$ " << conta->getSaldo() << endl;
 
