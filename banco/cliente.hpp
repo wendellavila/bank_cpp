@@ -12,7 +12,7 @@ class Cliente{
         Cliente(std::string p, std::string u);
         std::string getPrimeiroNome();
         std::string getUltimoNome();
-        Conta getConta();
-        void setConta(Conta conta);
-        void setCliente(std::string p, std::string u);
+        void setConta(Conta *conta);
+        Conta *getConta();
+        ~Cliente() {delete[] conta;};
 };

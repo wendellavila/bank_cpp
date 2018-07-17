@@ -38,6 +38,10 @@
 		<Unit filename="banco/cliente.hpp" />
 		<Unit filename="banco/conta.cpp" />
 		<Unit filename="banco/conta.hpp" />
+		<Unit filename="banco/contacorrente.cpp" />
+		<Unit filename="banco/contacorrente.hpp" />
+		<Unit filename="banco/contapoupanca.cpp" />
+		<Unit filename="banco/contapoupanca.hpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<envvars />

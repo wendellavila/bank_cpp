@@ -1,6 +1,7 @@
 #include "cliente.hpp"
 
 Cliente::Cliente() {
+    conta = new Conta(0);
 }
 
 Cliente::Cliente(std::string p, std::string u) {
@@ -16,15 +17,10 @@ std::string Cliente::getUltimoNome() {
     return ultimoNome;
 }
 
-Conta Cliente::getConta() {
-    return *conta;
+void Cliente::setConta(Conta *conta) {
+    this->conta = conta;
 }
 
-void Cliente::setConta(Conta conta) {
-    this->conta = &conta;
-}
-
-void Cliente::setCliente(std::string p, std::string u) {
-    this->primeiroNome = p;
-    this->ultimoNome = u;
+Conta * Cliente::getConta() {
+    return conta;
 }
