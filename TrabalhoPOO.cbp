@@ -32,17 +32,17 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="banco/banco.cpp" />
-		<Unit filename="banco/banco.hpp" />
-		<Unit filename="banco/cliente.cpp" />
-		<Unit filename="banco/cliente.hpp" />
-		<Unit filename="banco/conta.cpp" />
-		<Unit filename="banco/conta.hpp" />
-		<Unit filename="banco/contacorrente.cpp" />
-		<Unit filename="banco/contacorrente.hpp" />
-		<Unit filename="banco/contapoupanca.cpp" />
-		<Unit filename="banco/contapoupanca.hpp" />
-		<Unit filename="main.cpp" />
+		<Unit filename="banco/dominio/banco.cpp" />
+		<Unit filename="banco/dominio/banco.hpp" />
+		<Unit filename="banco/dominio/cliente.cpp" />
+		<Unit filename="banco/dominio/cliente.hpp" />
+		<Unit filename="banco/dominio/conta.cpp" />
+		<Unit filename="banco/dominio/conta.hpp" />
+		<Unit filename="banco/dominio/contacorrente.cpp" />
+		<Unit filename="banco/dominio/contacorrente.hpp" />
+		<Unit filename="banco/dominio/contapoupanca.cpp" />
+		<Unit filename="banco/dominio/contapoupanca.hpp" />
+		<Unit filename="banco/main.cpp" />
 		<Extensions>
 			<envvars />
 			<code_completion />
