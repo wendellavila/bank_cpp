@@ -1,9 +1,9 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
-#include "banco/banco.hpp"
-#include "banco/contacorrente.hpp"
-#include "banco/contapoupanca.hpp"
+#include "dominio/banco.hpp"
+#include "dominio/contacorrente.hpp"
+#include "dominio/contapoupanca.hpp"
 
 using namespace std;
 

@@ -46,3 +46,42 @@
 1531851625 source:/home/wendell/Projects/C++/TrabalhoPOO/banco/contacorrente.cpp
 	"contacorrente.hpp"
 
+1531804967 source:/home/wendell/Projects/C++/TrabalhoPOO/banco/dominio/banco.cpp
+	"banco.hpp"
+
+1531807509 /home/wendell/Projects/C++/TrabalhoPOO/banco/dominio/banco.hpp
+	<iostream>
+	<string>
+	"cliente.hpp"
+
+1531850844 /home/wendell/Projects/C++/TrabalhoPOO/banco/dominio/cliente.hpp
+	<iostream>
+	<string>
+	"conta.hpp"
+	"contacorrente.hpp"
+	"contapoupanca.hpp"
+
+1531791414 /home/wendell/Projects/C++/TrabalhoPOO/banco/dominio/conta.hpp
+	<iostream>
+
+1531851598 /home/wendell/Projects/C++/TrabalhoPOO/banco/dominio/contacorrente.hpp
+	<iostream>
+	"conta.hpp"
+	"contapoupanca.hpp"
+
+1531849825 /home/wendell/Projects/C++/TrabalhoPOO/banco/dominio/contapoupanca.hpp
+	<iostream>
+	"conta.hpp"
+
+1531850763 source:/home/wendell/Projects/C++/TrabalhoPOO/banco/dominio/cliente.cpp
+	"cliente.hpp"
+
+1531805636 source:/home/wendell/Projects/C++/TrabalhoPOO/banco/dominio/conta.cpp
+	"conta.hpp"
+
+1531851625 source:/home/wendell/Projects/C++/TrabalhoPOO/banco/dominio/contacorrente.cpp
+	"contacorrente.hpp"
+
+1531771217 source:/home/wendell/Projects/C++/TrabalhoPOO/banco/dominio/contapoupanca.cpp
+	"contapoupanca.hpp"
+
