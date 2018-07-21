@@ -2,6 +2,9 @@
 #include <string>
 #include "cliente.hpp"
 
+#ifndef BANCO_H
+#define BANCO_H
+
 class Banco{
     private:
         Cliente *clientes[5]; //cria um array de ponteiro de objetos
@@ -12,3 +15,5 @@ class Banco{
         Cliente *getCliente(int indice);
         int getNumeroDeClientes();
 };
+
+#endif // BANCO_H

@@ -1,33 +1,30 @@
 #include "cliente.hpp"
 
-Cliente::Cliente(){
+Cliente::Cliente() {
 }
 
-Cliente::Cliente(std::string p, std::string u){
+Cliente::Cliente(std::string p, std::string u) {
     this->primeiroNome = p;
     this->ultimoNome = u;
 }
 
-std::string Cliente::getPrimeiroNome(){
+std::string Cliente::getPrimeiroNome() {
     return primeiroNome;
 }
 
-std::string Cliente::getUltimoNome(){
+std::string Cliente::getUltimoNome() {
     return ultimoNome;
 }
 
-void Cliente::setContaPoupanca(ContaPoupanca *criarconta){
-    contaPoupanca = criarconta;
+void Cliente::adicionarConta(Conta *criarconta) {
+    conta[numeroDeContas] = criarconta;
+    numeroDeContas++;
 }
 
-void Cliente::setContaCorrente(ContaCorrente *criarconta){
-    contaCorrente = criarconta;
+Conta * Cliente::getConta(int indice) {
+    return conta[indice];
 }
 
-ContaCorrente * Cliente::getContaCorrente(){
-    return contaCorrente;
-}
-
-ContaPoupanca * Cliente::getContaPoupanca(){
-    return contaPoupanca;
+int Cliente::getNumeroDeContas(){
+    return numeroDeContas;
 }

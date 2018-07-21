@@ -1,15 +1,15 @@
 #include <iostream>
 #include "conta.hpp"
-#include "contapoupanca.hpp"
+
 #ifndef CONTACORRENTE_H
 #define CONTACORRENTE_H
 
 class ContaCorrente : public Conta {
-    private:
-        ContaPoupanca *protegidoPor;
+    protected:
+        double chequeEspecial;
     public:
         ContaCorrente(double saldo);
-        ContaCorrente(double saldo, ContaPoupanca *prot);
+        ContaCorrente(double saldo, double protecao);
         bool sacar(double total);
         double getChequeEspecial();
 };
