@@ -85,10 +85,10 @@
 1531771217 source:/home/wendell/Projects/C++/TrabalhoPOO/banco/dominio/contapoupanca.cpp
 	"contapoupanca.hpp"
 
-1531848283 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/banco.cpp
+1532188866 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/banco.cpp
 	"banco.hpp"
 
-1532185132 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/banco.hpp
+1532188653 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/banco.hpp
 	<iostream>
 	<string>
 	"cliente.hpp"
@@ -121,11 +121,24 @@
 1531848283 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/contapoupanca.cpp
 	"contapoupanca.hpp"
 
-1532184462 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/main.cpp
+1532192375 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/main.cpp
 	<iostream>
 	<string>
 	"dominio/banco.hpp"
 	"dominio/cliente.hpp"
 	"dominio/contacorrente.hpp"
 	"dominio/contapoupanca.hpp"
+	"relatorios/relatorioclientes.hpp"
+
+1532192586 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/relatorios/relatorioclientes.hpp
+	<iostream>
+	<string>
+	<iomanip>
+	"../dominio/banco.hpp"
+	"../dominio/cliente.hpp"
+	"../dominio/contacorrente.hpp"
+	"../dominio/contapoupanca.hpp"
+
+1532192046 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/relatorios/relatorioclientes.cpp
+	"relatorioclientes.hpp"
 
