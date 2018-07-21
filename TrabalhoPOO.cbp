@@ -43,6 +43,8 @@
 		<Unit filename="banco/dominio/contapoupanca.cpp" />
 		<Unit filename="banco/dominio/contapoupanca.hpp" />
 		<Unit filename="banco/main.cpp" />
+		<Unit filename="banco/relatorios/relatorioclientes.cpp" />
+		<Unit filename="banco/relatorios/relatorioclientes.hpp" />
 		<Extensions>
 			<envvars />
 			<code_completion />
