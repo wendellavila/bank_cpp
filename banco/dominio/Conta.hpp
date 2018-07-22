@@ -1,4 +1,5 @@
 #include <iostream>
+#include "ExcecaoChequeEspecial.hpp"
 
 #ifndef CONTA_H
 #define CONTA_H
@@ -11,7 +12,7 @@ class Conta{
         Conta(double saldoInicial);
         double getSaldo();
         bool depositar(double Valor);
-        virtual bool sacar(double Valor);
+        virtual void sacar(double Valor);
         double getChequeEspecial();
 };
 

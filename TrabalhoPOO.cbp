@@ -32,19 +32,20 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="banco/dominio/banco.cpp" />
-		<Unit filename="banco/dominio/banco.hpp" />
-		<Unit filename="banco/dominio/cliente.cpp" />
-		<Unit filename="banco/dominio/cliente.hpp" />
-		<Unit filename="banco/dominio/conta.cpp" />
-		<Unit filename="banco/dominio/conta.hpp" />
-		<Unit filename="banco/dominio/contacorrente.cpp" />
-		<Unit filename="banco/dominio/contacorrente.hpp" />
-		<Unit filename="banco/dominio/contapoupanca.cpp" />
-		<Unit filename="banco/dominio/contapoupanca.hpp" />
+		<Unit filename="banco/dominio/Banco.cpp" />
+		<Unit filename="banco/dominio/Banco.hpp" />
+		<Unit filename="banco/dominio/Cliente.cpp" />
+		<Unit filename="banco/dominio/Cliente.hpp" />
+		<Unit filename="banco/dominio/Conta.cpp" />
+		<Unit filename="banco/dominio/Conta.hpp" />
+		<Unit filename="banco/dominio/ContaCorrente.cpp" />
+		<Unit filename="banco/dominio/ContaCorrente.hpp" />
+		<Unit filename="banco/dominio/ContaPoupanca.cpp" />
+		<Unit filename="banco/dominio/ContaPoupanca.hpp" />
+		<Unit filename="banco/dominio/ExcecaoChequeEspecial.hpp" />
 		<Unit filename="banco/main.cpp" />
-		<Unit filename="banco/relatorios/relatorioclientes.cpp" />
-		<Unit filename="banco/relatorios/relatorioclientes.hpp" />
+		<Unit filename="banco/relatorios/RelatorioClientes.cpp" />
+		<Unit filename="banco/relatorios/RelatorioClientes.hpp" />
 		<Extensions>
 			<envvars />
 			<code_completion />

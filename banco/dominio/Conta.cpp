@@ -1,4 +1,4 @@
-#include "conta.hpp"
+#include "Conta.hpp"
 
 Conta::Conta(){
 }
@@ -11,16 +11,13 @@ bool Conta::depositar(double valor){
     saldo += valor;
     return true;
 }
-bool Conta::sacar(double valor){
+void Conta::sacar(double valor){
     //std::cout << "sacar conta" << std::endl;
     if(valor <= saldo) {
         saldo -= valor;
-        return true;
     }
     else {
-        //valor = saldo;
-        //saldo -= valor;
-        return false;
+        throw ExcecaoChequeEspecial("Saldo insuficiente.", valor);
     }
 }
 double Conta::getChequeEspecial(){

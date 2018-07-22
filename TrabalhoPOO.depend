@@ -93,15 +93,15 @@
 	<string>
 	"cliente.hpp"
 
-1532185096 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/cliente.hpp
+1532274788 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/cliente.hpp
 	<iostream>
 	<string>
 	"conta.hpp"
 
-1532185098 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/conta.hpp
+1532270410 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/conta.hpp
 	<iostream>
 
-1532185158 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/contacorrente.hpp
+1532271003 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/contacorrente.hpp
 	<iostream>
 	"conta.hpp"
 
@@ -112,23 +112,24 @@
 1531848283 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/cliente.cpp
 	"cliente.hpp"
 
-1531848283 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/conta.cpp
+1532271408 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/conta.cpp
 	"conta.hpp"
 
-1532184497 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/contacorrente.cpp
+1532271403 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/contacorrente.cpp
 	"contacorrente.hpp"
 
 1531848283 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/contapoupanca.cpp
 	"contapoupanca.hpp"
 
-1532192375 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/main.cpp
+1532279894 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/main.cpp
 	<iostream>
 	<string>
-	"dominio/banco.hpp"
-	"dominio/cliente.hpp"
-	"dominio/contacorrente.hpp"
-	"dominio/contapoupanca.hpp"
-	"relatorios/relatorioclientes.hpp"
+	"dominio/Banco.hpp"
+	"dominio/Cliente.hpp"
+	"dominio/ContaCorrente.hpp"
+	"dominio/ContaPoupanca.hpp"
+	"dominio/ExcecaoChequeEspecial.hpp"
+	"relatorios/RelatorioClientes.hpp"
 
 1532192586 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/relatorios/relatorioclientes.hpp
 	<iostream>
@@ -139,6 +140,62 @@
 	"../dominio/contacorrente.hpp"
 	"../dominio/contapoupanca.hpp"
 
-1532192046 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/relatorios/relatorioclientes.cpp
+1532192769 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/relatorios/relatorioclientes.cpp
 	"relatorioclientes.hpp"
+
+1532275153 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/Banco.cpp
+	"Banco.hpp"
+
+1532275157 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/Banco.hpp
+	<iostream>
+	<string>
+	"Cliente.hpp"
+
+1532275165 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/Cliente.hpp
+	<iostream>
+	<string>
+	"Conta.hpp"
+
+1532280524 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/Conta.hpp
+	<iostream>
+	"ExcecaoChequeEspecial.hpp"
+
+1532275162 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/Cliente.cpp
+	"Cliente.hpp"
+
+1532280579 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/Conta.cpp
+	"Conta.hpp"
+
+1532280705 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/ContaCorrente.cpp
+	"ContaCorrente.hpp"
+
+1532280601 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/ContaCorrente.hpp
+	<iostream>
+	"Conta.hpp"
+	"ExcecaoChequeEspecial.hpp"
+
+1532279043 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/ExcecaoChequeEspecial.cpp
+
+1532275320 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/ContaPoupanca.cpp
+	"ContaPoupanca.hpp"
+
+1532275193 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/ContaPoupanca.hpp
+	<iostream>
+	"Conta.hpp"
+
+1532275213 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/relatorios/RelatorioClientes.cpp
+	"RelatorioClientes.hpp"
+
+1532275227 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/relatorios/RelatorioClientes.hpp
+	<iostream>
+	<string>
+	<iomanip>
+	"../dominio/Banco.hpp"
+	"../dominio/Cliente.hpp"
+	"../dominio/ContaCorrente.hpp"
+	"../dominio/ContaPoupanca.hpp"
+
+1532280016 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/ExcecaoChequeEspecial.hpp
+	<iostream>
+	<string>
 

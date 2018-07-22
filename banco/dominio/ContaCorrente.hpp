@@ -1,5 +1,6 @@
 #include <iostream>
-#include "conta.hpp"
+#include "Conta.hpp"
+#include "ExcecaoChequeEspecial.hpp"
 
 #ifndef CONTACORRENTE_H
 #define CONTACORRENTE_H
@@ -10,7 +11,7 @@ class ContaCorrente : public Conta {
     public:
         ContaCorrente(double saldo);
         ContaCorrente(double saldo, double protecao);
-        bool sacar(double total);
+        void sacar(double total);
         double getChequeEspecial();
 };
 

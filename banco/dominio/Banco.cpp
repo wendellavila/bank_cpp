@@ -1,4 +1,4 @@
-#include "banco.hpp"
+#include "Banco.hpp"
 
 //definição obrigatória da variável static
 Banco * Banco::banco;

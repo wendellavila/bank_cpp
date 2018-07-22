@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "conta.hpp"
+#include "Conta.hpp"
 
 #ifndef CLIENTE_H
 #define CLIENTE_H
@@ -16,7 +16,7 @@ class Cliente{
         Cliente(std::string p, std::string u);
         std::string getPrimeiroNome();
         std::string getUltimoNome();
-        void adicionarConta(Conta *criarconta);
+        void setConta(Conta *criarconta);
         Conta *getConta(int indice);
         int getNumeroDeContas();
         ~Cliente(){

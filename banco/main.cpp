@@ -1,10 +1,12 @@
 #include <iostream>
 #include <string>
-#include "dominio/banco.hpp"
-#include "dominio/cliente.hpp"
-#include "dominio/contacorrente.hpp"
-#include "dominio/contapoupanca.hpp"
-#include "relatorios/relatorioclientes.hpp"
+#include <iomanip> // std::setprecision
+#include "dominio/Banco.hpp"
+#include "dominio/Cliente.hpp"
+#include "dominio/ContaCorrente.hpp"
+#include "dominio/ContaPoupanca.hpp"
+#include "dominio/ExcecaoChequeEspecial.hpp"
+#include "relatorios/RelatorioClientes.hpp"
 
 
 using namespace std;
@@ -13,31 +15,64 @@ int main(){
 
     Banco *banco = Banco::getBanco();
     Cliente *cliente;
-    RelatorioClientes relatorio;
-    //Conta* conta;
+    Conta *conta;
 
-    // Cria varios clientes e suas respectivas contas
+    // Cria dois clientes e suas contas
     banco->adicionarCliente("Jane", "Simms");
     cliente = banco->getCliente(0);
-    cliente->adicionarConta(new ContaPoupanca(500.00, 0.05));
-    cliente->adicionarConta(new ContaCorrente(200.00, 400.00));
-
+    cliente->setConta(new ContaPoupanca(300.00, 0.05));
+    cliente->setConta(new ContaCorrente(200.00, 300.00));
     banco->adicionarCliente("Owen", "Bryant");
     cliente = banco->getCliente(1);
-    cliente->adicionarConta(new ContaCorrente(200.00));
+    cliente->setConta(new ContaCorrente(200.00));
 
-    banco->adicionarCliente("Tim", "Soley");
-    cliente = banco->getCliente(2);
-    cliente->adicionarConta(new ContaPoupanca(1500.00, 0.05));
-    cliente->adicionarConta(new ContaCorrente(200.00));
+    std::cout << std::fixed << std::setprecision(2); //definindo precisão do print do double em 2 casas decimais
 
-    banco->adicionarCliente("Maria", "Soley");
-    cliente = banco->getCliente(3);
-    // Maria e Tim possuem uma conta conjunta
-    cliente->adicionarConta(banco->getCliente(2)->getConta(1));
-    cliente->adicionarConta(new ContaPoupanca(150.00, 0.05));
+    // Testa  a conta corrente de Jane Simms (com cheque especial)
+    cliente = banco->getCliente(0);
+    conta = cliente->getConta(1);
+    cout << "Cliente [" << cliente->getUltimoNome() << ", " << cliente->getPrimeiroNome() << "]"
+         << " Tem um saldo em conta corrente de R$" << conta->getSaldo() << " , com cheque especial de R$ 300.00." << endl;
 
-    relatorio.geraRelatorio();
+    try {
+        cout << "Conta Corrente [Jane Simms] : Saque de R$ 150,00" << endl;
+        conta->sacar(150.00);
+        cout << "Conta Corrente [Jane Simms] : depósito de R$ 22,50" << endl;
+        conta->depositar(22.50);
+        cout << "Conta Corrente [Jane Simms] : Saque de R$ 147,62" << endl;
+        conta->sacar(147.62);
+        cout << "Conta Corrente [Jane Simms] : Saque de R$ 470,00" << endl;
+        conta->sacar(470.00);
+    }
+    catch(ExcecaoChequeEspecial& e1){
+        cout << e1.what() << "   Déficit: R$" << e1.getDeficit() << endl;
+    }
+
+    cout << "Cliente [" << cliente->getUltimoNome() << ", " << cliente->getPrimeiroNome() << "]"
+         << " Tem um saldo em conta corrente de R$" << conta->getSaldo() << endl << endl;
+
+
+    // Testa a conta corrente de Owen Bryant (sem cheque especial)
+    cliente = banco->getCliente(1);
+    conta = cliente->getConta(0);
+    cout << "Cliente [" << cliente->getUltimoNome() << ", " << cliente->getPrimeiroNome() << "]"
+         << " tem um saldo de R$" << conta->getSaldo() << endl;
+
+    try {
+        cout << "Conta Corrente [Owen Bryant] : Saque de R$ 100,00" << endl;
+        conta->sacar(100.00);
+        cout << "Conta Corrente [Owen Bryant] : depósito de R$ 25,00" << endl;
+        conta->depositar(25.00);
+        cout << "Conta Corrente [Owen Bryant] : Saque de R$ 175,00" << endl;
+        conta->sacar(175.00);
+    }
+    catch(ExcecaoChequeEspecial& e1){
+      cout << e1.what() << "   Déficit: R$" << e1.getDeficit() << endl;
+    }
+
+    cout << "Cliente [" << cliente->getUltimoNome() << ", " << cliente->getPrimeiroNome() << "]"
+         << " Tem um saldo dem conta corrente de R$" << conta->getSaldo() << endl;
+
 
     return 0;
 }

@@ -1,4 +1,4 @@
-#include "cliente.hpp"
+#include "Cliente.hpp"
 
 Cliente::Cliente() {
 }
@@ -16,7 +16,7 @@ std::string Cliente::getUltimoNome() {
     return ultimoNome;
 }
 
-void Cliente::adicionarConta(Conta *criarconta) {
+void Cliente::setConta(Conta *criarconta) {
     conta[numeroDeContas] = criarconta;
     numeroDeContas++;
 }
