@@ -38,17 +38,17 @@ int main(){
          << " Tem um saldo em conta corrente de R$" << conta->getSaldo() << " , com cheque especial de R$ 500.00." << endl;
 
     try {
-        cout << "Conta Corrente [Jane Simms] : Saque de R$ 150,00" << endl;
+        cout << "Conta Corrente [Jane Simms] : Saque de R$ 150.00" << endl;
         conta->sacar(150.00);
-        cout << "Conta Corrente [Jane Simms] : deposito de R$ 22,50" << endl;
+        cout << "Conta Corrente [Jane Simms] : deposito de R$ 22.50" << endl;
         conta->depositar(22.50);
-        cout << "Conta Corrente [Jane Simms] : Saque de R$ 147,62" << endl;
+        cout << "Conta Corrente [Jane Simms] : Saque de R$ 147.62" << endl;
         conta->sacar(147.62);
-        cout << "Conta Corrente [Jane Simms] : Saque de R$ 470,00" << endl;
+        cout << "Conta Corrente [Jane Simms] : Saque de R$ 470.00" << endl;
         conta->sacar(470.00);
     }
     catch(ExcecaoChequeEspecial& e1){
-        cout << e1.what() << "   Déficit: R$" << e1.getDeficit() << endl;
+        cout << e1.what() << "   Deficit: R$" << e1.getDeficit() << endl;
     }
 
     cout << "Cliente [" << cliente->getUltimoNome() << ", " << cliente->getPrimeiroNome() << "]"
@@ -62,24 +62,19 @@ int main(){
          << " tem um saldo de R$" << conta->getSaldo() << endl;
 
     try {
-        cout << "Conta Corrente [Owen Bryant] : Saque de R$ 100,00" << endl;
+        cout << "Conta Corrente [Owen Bryant] : Saque de R$ 100.00" << endl;
         conta->sacar(100.00);
-        cout << "Conta Corrente [Owen Bryant] : deposito de R$ 25,00" << endl;
+        cout << "Conta Corrente [Owen Bryant] : deposito de R$ 25.00" << endl;
         conta->depositar(25.00);
-        cout << "Conta Corrente [Owen Bryant] : Saque de R$ 175,00" << endl;
+        cout << "Conta Corrente [Owen Bryant] : Saque de R$ 175.00" << endl;
         conta->sacar(175.00);
     }
     catch(ExcecaoChequeEspecial& e1){
-      cout << e1.what() << "   Déficit: R$" << e1.getDeficit() << endl;
+      cout << e1.what() << "   Deficit: R$" << e1.getDeficit() << endl;
     }
 
     cout << "Cliente [" << cliente->getUltimoNome() << ", " << cliente->getPrimeiroNome() << "]"
          << " Tem um saldo em conta corrente de R$" << conta->getSaldo() << endl;
-
-    //deletando ponteiros
-    delete a;
-    delete b;
-    delete c;
 
     return 0;
 }
