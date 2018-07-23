@@ -17,14 +17,13 @@ std::string Cliente::getUltimoNome() {
 }
 
 void Cliente::setConta(Conta *criarconta) {
-    conta[numeroDeContas] = criarconta;
-    numeroDeContas++;
+    conta.push_back(criarconta);
 }
 
 Conta * Cliente::getConta(int indice) {
-    return conta[indice];
+    return conta.at(indice);
 }
 
 int Cliente::getNumeroDeContas(){
-    return numeroDeContas;
+    return conta.size();
 }

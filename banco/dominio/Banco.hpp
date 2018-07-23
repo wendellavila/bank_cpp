@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include <string>
 #include "Cliente.hpp"
 
@@ -7,8 +8,7 @@
 
 class Banco{
     private:
-        Cliente *clientes[5]; //cria um array de ponteiro de objetos
-        int numeroDeClientes;
+        std::vector<Cliente*> clientes; //cria um arraylist de ponteiro de objeto
         static Banco *banco;
     public:
         Banco();
@@ -16,6 +16,11 @@ class Banco{
         void adicionarCliente(std::string p, std::string u);
         Cliente *getCliente(int indice);
         int getNumeroDeClientes();
+        ~Banco(){
+            for(int i = 0; i < getNumeroDeClientes(); i++){
+                delete[] clientes[i]; //destruir ponteiros dentro do vector clientes
+            }
+        }
 };
 
 #endif // BANCO_H

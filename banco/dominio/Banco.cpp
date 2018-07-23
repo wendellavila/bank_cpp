@@ -7,9 +7,7 @@ Banco::Banco(){
 }
 
 void Banco::adicionarCliente(std::string p, std::string u){
-    int indice = getNumeroDeClientes();
-    clientes[indice] = new Cliente(p, u);
-    numeroDeClientes++;
+    clientes.push_back(new Cliente(p, u));
 }
 Banco * Banco::getBanco(){
     if(banco == NULL){
@@ -18,9 +16,9 @@ Banco * Banco::getBanco(){
     return banco;
 }
 Cliente * Banco::getCliente(int indice){
-    return clientes[indice];
+    return clientes.at(indice);
 }
 
 int Banco::getNumeroDeClientes(){
-    return numeroDeClientes;
+    return clientes.size();
 }

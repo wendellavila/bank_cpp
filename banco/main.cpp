@@ -8,7 +8,6 @@
 #include "dominio/ExcecaoChequeEspecial.hpp"
 #include "relatorios/RelatorioClientes.hpp"
 
-
 using namespace std;
 
 int main(){
@@ -17,14 +16,18 @@ int main(){
     Cliente *cliente;
     Conta *conta;
 
+    //salvando contas em variáveis para deletar posteriormente
+    ContaPoupanca *a = new ContaPoupanca(300.00, 0.05);
+    ContaCorrente *b = new ContaCorrente(200.00, 300.00), *c = new ContaCorrente(200.00);
+
     // Cria dois clientes e suas contas
     banco->adicionarCliente("Jane", "Simms");
     cliente = banco->getCliente(0);
-    cliente->setConta(new ContaPoupanca(300.00, 0.05));
-    cliente->setConta(new ContaCorrente(200.00, 300.00));
+    cliente->setConta(a);
+    cliente->setConta(b);
     banco->adicionarCliente("Owen", "Bryant");
     cliente = banco->getCliente(1);
-    cliente->setConta(new ContaCorrente(200.00));
+    cliente->setConta(c);
 
     std::cout << std::fixed << std::setprecision(2); //definindo precisão do print do double em 2 casas decimais
 
@@ -32,12 +35,12 @@ int main(){
     cliente = banco->getCliente(0);
     conta = cliente->getConta(1);
     cout << "Cliente [" << cliente->getUltimoNome() << ", " << cliente->getPrimeiroNome() << "]"
-         << " Tem um saldo em conta corrente de R$" << conta->getSaldo() << " , com cheque especial de R$ 300.00." << endl;
+         << " Tem um saldo em conta corrente de R$" << conta->getSaldo() << " , com cheque especial de R$ 500.00." << endl;
 
     try {
         cout << "Conta Corrente [Jane Simms] : Saque de R$ 150,00" << endl;
         conta->sacar(150.00);
-        cout << "Conta Corrente [Jane Simms] : depósito de R$ 22,50" << endl;
+        cout << "Conta Corrente [Jane Simms] : deposito de R$ 22,50" << endl;
         conta->depositar(22.50);
         cout << "Conta Corrente [Jane Simms] : Saque de R$ 147,62" << endl;
         conta->sacar(147.62);
@@ -61,7 +64,7 @@ int main(){
     try {
         cout << "Conta Corrente [Owen Bryant] : Saque de R$ 100,00" << endl;
         conta->sacar(100.00);
-        cout << "Conta Corrente [Owen Bryant] : depósito de R$ 25,00" << endl;
+        cout << "Conta Corrente [Owen Bryant] : deposito de R$ 25,00" << endl;
         conta->depositar(25.00);
         cout << "Conta Corrente [Owen Bryant] : Saque de R$ 175,00" << endl;
         conta->sacar(175.00);
@@ -71,8 +74,12 @@ int main(){
     }
 
     cout << "Cliente [" << cliente->getUltimoNome() << ", " << cliente->getPrimeiroNome() << "]"
-         << " Tem um saldo dem conta corrente de R$" << conta->getSaldo() << endl;
+         << " Tem um saldo em conta corrente de R$" << conta->getSaldo() << endl;
 
+    //deletando ponteiros
+    delete a;
+    delete b;
+    delete c;
 
     return 0;
 }

@@ -121,9 +121,10 @@
 1531848283 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/contapoupanca.cpp
 	"contapoupanca.hpp"
 
-1532279894 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/main.cpp
+1532309827 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/main.cpp
 	<iostream>
 	<string>
+	<iomanip>
 	"dominio/Banco.hpp"
 	"dominio/Cliente.hpp"
 	"dominio/ContaCorrente.hpp"
@@ -143,16 +144,18 @@
 1532192769 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/relatorios/relatorioclientes.cpp
 	"relatorioclientes.hpp"
 
-1532275153 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/Banco.cpp
+1532308975 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/Banco.cpp
 	"Banco.hpp"
 
-1532275157 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/Banco.hpp
+1532310783 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/Banco.hpp
 	<iostream>
+	<vector>
 	<string>
 	"Cliente.hpp"
 
-1532275165 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/Cliente.hpp
+1532310791 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/Cliente.hpp
 	<iostream>
+	<vector>
 	<string>
 	"Conta.hpp"
 
@@ -160,7 +163,7 @@
 	<iostream>
 	"ExcecaoChequeEspecial.hpp"
 
-1532275162 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/Cliente.cpp
+1532308860 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/Cliente.cpp
 	"Cliente.hpp"
 
 1532280579 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/Conta.cpp
@@ -183,7 +186,7 @@
 	<iostream>
 	"Conta.hpp"
 
-1532275213 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/relatorios/RelatorioClientes.cpp
+1532308744 source:/home/wendell/Projects/C++/ProjetoBancoCpp/banco/relatorios/RelatorioClientes.cpp
 	"RelatorioClientes.hpp"
 
 1532275227 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/relatorios/RelatorioClientes.hpp
@@ -195,7 +198,7 @@
 	"../dominio/ContaCorrente.hpp"
 	"../dominio/ContaPoupanca.hpp"
 
-1532280016 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/ExcecaoChequeEspecial.hpp
+1532310012 /home/wendell/Projects/C++/ProjetoBancoCpp/banco/dominio/ExcecaoChequeEspecial.hpp
 	<iostream>
 	<string>
 

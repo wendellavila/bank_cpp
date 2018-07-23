@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include <string>
 #include "Conta.hpp"
 
@@ -7,10 +8,9 @@
 
 class Cliente{
     private:
+        std::vector<Conta*> conta; //cria um arraylist de ponteiro de objeto
         std::string primeiroNome;
         std::string ultimoNome;
-        int numeroDeContas;
-        Conta *conta[5];
     public:
         Cliente();
         Cliente(std::string p, std::string u);
@@ -20,10 +20,10 @@ class Cliente{
         Conta *getConta(int indice);
         int getNumeroDeContas();
         ~Cliente(){
-            for(int i = 0; i < 5; i++){
-               delete[] conta[i];
+            for(int i = 0; i < getNumeroDeContas(); i++){
+                delete[] conta[i]; //destruir ponteiros dentro do vector conta
             }
-        };
+        }
 };
 
 #endif // CLIENTE_H

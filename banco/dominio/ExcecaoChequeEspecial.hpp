@@ -7,7 +7,6 @@
 class ExcecaoChequeEspecial : public std::exception {
     public:
         ExcecaoChequeEspecial(const char* msg_, double deficit_) : msg(msg_), deficit(deficit_){}
-        //~ExcecaoChequeEspecial(void);
         const char* what(){ return msg.c_str(); }
         double getDeficit(){ return deficit; };
     private:
